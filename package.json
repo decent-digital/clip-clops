@@ -1,17 +1,9 @@
 {
   "name": "clip-clops",
-  "version": "1.0.0",
   "description": "all clips fit to clop",
-  "main": "index.js",
-  "repository": "git@github.com:ungoldman/clip-clops.git",
+  "version": "1.0.0",
   "author": "ungoldman <ungoldman@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "publishFeed": "tsx scripts/publishFeedGen.ts",
-    "unpublishFeed": "tsx scripts/unpublishFeedGen.ts",
-    "start": "tsx src/index.ts",
-    "build": "tsc"
-  },
+  "bugs": "https://github.com/ungoldman/clip-clops/issues",
   "dependencies": {
     "@atproto/api": "^0.6.20",
     "@atproto/identity": "^0.2.1",
@@ -35,5 +27,19 @@
   "engines": {
     "node": "20",
     "npm": "10"
+  },
+  "homepage": "https://github.com/ungoldman/clip-clops",
+  "keywords": [
+    "clips",
+    "clops"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "git@github.com:ungoldman/clip-clops.git",
+  "scripts": {
+    "build": "tsc",
+    "publishFeed": "tsx scripts/publishFeedGen.ts",
+    "start": "tsx src/index.ts",
+    "unpublishFeed": "tsx scripts/unpublishFeedGen.ts"
   }
 }
