@@ -21,6 +21,7 @@
     "@types/better-sqlite3": "^7.6.4",
     "@types/express": "^4.17.17",
     "@types/node": "^20.1.2",
+    "prettier": "^3.3.3",
     "tsx": "^4.19.0",
     "typescript": "^5.0.4"
   },
@@ -38,6 +39,7 @@
   "repository": "git@github.com:ungoldman/clip-clops.git",
   "scripts": {
     "build": "tsc",
+    "fmt": "prettier -w '**/*.ts",
     "publishFeed": "tsx scripts/publishFeedGen.ts",
     "start": "tsx src/index.ts",
     "unpublishFeed": "tsx scripts/unpublishFeedGen.ts"
