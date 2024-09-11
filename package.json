@@ -36,6 +36,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "private": true,
   "repository": "git@github.com:ungoldman/clip-clops.git",
   "scripts": {
     "build": "tsc",
