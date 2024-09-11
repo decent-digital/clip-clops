@@ -31,5 +31,9 @@
     "@types/node": "^20.1.2",
     "tsx": "^4.19.0",
     "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": "20",
+    "npm": "10"
   }
 }
