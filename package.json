@@ -40,9 +40,10 @@
   "repository": "git@github.com:ungoldman/clip-clops.git",
   "scripts": {
     "build": "tsc",
-    "fmt": "prettier -w '**/*.ts",
+    "dev": "tsx src/index.ts",
+    "fmt": "prettier --write '**/*.ts'",
     "publishFeed": "tsx scripts/publishFeedGen.ts",
-    "start": "tsx src/index.ts",
+    "start": "node dist/index.js",
     "unpublishFeed": "tsx scripts/unpublishFeedGen.ts"
   }
 }
