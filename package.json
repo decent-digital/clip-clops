@@ -10,17 +10,17 @@
     "@atproto/lexicon": "^0.2.2",
     "@atproto/repo": "^0.3.2",
     "@atproto/syntax": "^0.1.2",
-    "@atproto/xrpc-server": "^0.6.0",
+    "@atproto/xrpc-server": "^0.6.4",
     "better-sqlite3": "^8.3.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "kysely": "^0.22.0",
+    "express": "^4.21.0",
+    "kysely": "^0.27.4",
     "multiformats": "^9.9.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.4",
     "@types/express": "^4.17.17",
-    "@types/node": "^20.1.2",
+    "@types/node": "^22.5.4",
     "prettier": "^3.3.3",
     "tsx": "^4.19.0",
     "typescript": "^5.0.4"
@@ -40,7 +40,7 @@
   "repository": "git@github.com:ungoldman/clip-clops.git",
   "scripts": {
     "build": "tsc",
-    "dev": "tsx src/index.ts",
+    "dev": "tsx --env-file=.env src/index.ts",
     "fmt": "prettier --write '**/*.ts'",
     "publishFeed": "tsx scripts/publishFeedGen.ts",
     "start": "node dist/index.js",

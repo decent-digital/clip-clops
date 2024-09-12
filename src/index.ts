@@ -30,6 +30,13 @@ const run = async () => {
   })
   server.app.get('/', (req, res) => res.send('clip clops server welcomes you'))
   server.app.get('/h', (req, res) => res.send('ok'))
+  server.app.get('/sup', async (req, res) => {
+    const sup = await server.db
+      .selectFrom('post')
+      .select((eb) => eb.fn.count('uri').as('clips'))
+      .execute()
+    res.send(sup[0])
+  })
   await server.start()
   console.log(
     `🍿 clips clopping at http://${server.cfg.listenhost}:${server.cfg.port}`,
