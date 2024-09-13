@@ -9,6 +9,12 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
     if (!isCommit(evt)) return
     const ops = await getOpsByType(evt)
 
+    if (process.env.DEBUG === '*' && ops.posts.creates) {
+      for (const post of ops.posts.creates) {
+        console.log(post)
+      }
+    }
+
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
     const postsToCreate = ops.posts.creates
       .filter((create) => {
