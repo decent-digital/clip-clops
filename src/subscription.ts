@@ -7,7 +7,13 @@ import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
   async handleEvent(evt: RepoEvent) {
     if (!isCommit(evt)) return
-    const ops = await getOpsByType(evt)
+
+    const ops = await getOpsByType(evt).catch(e => {
+      console.error('repo subscription could not handle message', e);
+      return undefined;
+    });
+
+    if (!ops) return;
 
     if (process.env.DEBUG === '*' && ops.posts.creates) {
       for (const post of ops.posts.creates) {
