@@ -6,8 +6,9 @@
   "bugs": "https://github.com/ungoldman/clip-clops/issues",
   "dependencies": {
     "@atproto/api": "^0.6.24",
+    "@atproto/bsky": "^0.0.43",
     "@atproto/identity": "^0.2.1",
-    "@atproto/lexicon": "^0.2.2",
+    "@atproto/lexicon": "^0.2.3",
     "@atproto/repo": "^0.3.2",
     "@atproto/syntax": "^0.1.2",
     "@atproto/xrpc-server": "^0.6.4",

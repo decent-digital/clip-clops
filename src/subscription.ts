@@ -1,13 +1,9 @@
-import {
-  OutputSchema as RepoEvent,
-  isCommit,
-} from './lexicon/types/com/atproto/sync/subscribeRepos'
 import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
+import { ComAtprotoSyncSubscribeRepos } from '@atproto/api'
 
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
-  async handleEvent(evt: RepoEvent) {
-    if (!isCommit(evt)) return
-
+  async handleEvent(evt: ComAtprotoSyncSubscribeRepos.Commit) {
+    if (!ComAtprotoSyncSubscribeRepos.isCommit(evt)) return
     const ops = await getOpsByType(evt).catch(e => {
       console.error('repo subscription could not handle message', e);
       return undefined;
@@ -15,11 +11,7 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
 
     if (!ops) return;
 
-    if (process.env.DEBUG === '*' && ops.posts.creates) {
-      for (const post of ops.posts.creates) {
-        console.log(post)
-      }
-    }
+    console.log(ops)
 
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
     const postsToCreate = ops.posts.creates

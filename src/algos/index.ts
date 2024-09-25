@@ -1,11 +1,12 @@
 import { AppContext } from '../config'
-import {
-  QueryParams,
-  OutputSchema as AlgoOutput,
-} from '../lexicon/types/app/bsky/feed/getFeedSkeleton'
+import { AppBskyFeedGetFeedSkeleton } from '@atproto/api'
 import * as clipClops from './clip-clops'
 
-type AlgoHandler = (ctx: AppContext, params: QueryParams) => Promise<AlgoOutput>
+
+type AlgoHandler = (
+  ctx: AppContext,
+  params: AppBskyFeedGetFeedSkeleton.QueryParams,
+) => Promise<AppBskyFeedGetFeedSkeleton.OutputSchema>
 
 const algos: Record<string, AlgoHandler> = {
   [clipClops.shortname]: clipClops.handler,
