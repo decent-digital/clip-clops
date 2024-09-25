@@ -5,25 +5,25 @@
   "author": "ungoldman <ungoldman@gmail.com>",
   "bugs": "https://github.com/ungoldman/clip-clops/issues",
   "dependencies": {
-    "@atproto/api": "^0.6.24",
-    "@atproto/bsky": "^0.0.43",
-    "@atproto/identity": "^0.2.1",
-    "@atproto/lexicon": "^0.2.3",
-    "@atproto/repo": "^0.3.2",
-    "@atproto/syntax": "^0.1.2",
+    "@atproto/api": "^0.13.7",
+    "@atproto/bsky": "^0.0.83",
+    "@atproto/identity": "^0.4.1",
+    "@atproto/lexicon": "^0.4.1",
+    "@atproto/repo": "^0.5.1",
+    "@atproto/syntax": "^0.3.0",
     "@atproto/xrpc-server": "^0.6.4",
-    "better-sqlite3": "^8.3.0",
+    "better-sqlite3": "^11.3.0",
     "dotenv": "^16.0.3",
     "express": "^4.21.0",
     "kysely": "^0.27.4",
-    "multiformats": "^9.9.0"
+    "multiformats": "^13.3.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.4",
     "@types/express": "^4.17.17",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.7.0",
     "prettier": "^3.3.3",
-    "tsx": "^4.19.0",
+    "tsx": "^4.19.1",
     "typescript": "^5.0.4"
   },
   "engines": {
