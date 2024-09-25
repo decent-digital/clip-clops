@@ -11,7 +11,11 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
 
     if (!ops) return;
 
-    console.log(ops)
+    if (process.env.DEBUG === '*' && ops.posts.creates) {
+      for (const post of ops.posts.creates) {
+        console.log(post.record)
+      }
+    }
 
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
     const postsToCreate = ops.posts.creates
